@@ -1,24 +1,24 @@
----
 language: node_js
 node_js:
-  - "4"
-
-sudo: false
-
+- '4'
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-  - npm install phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower
+- bower --version
+- npm install phantomjs-prebuilt@2
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: script
+  script: ember deploy production
+  skip_cleanup: true
+env:
+  global:
+  - secure: spBVgN9VfATj4dr7Guk96d94/uMTCd19GpSby5NT6nb6HYNFZLkJakJFGpbnPNWVy8mscTlataRRyKHEmq01EEjWZGh8X66zoU2ZqtnJrvTJpsCL6LdwLrYGKgunh+kqgAAG2jqlke3Z2Rk+1AUx9yOL3V1NkbaeSlbFtiRSCXt3Ka9zvaeRvsURsHQTJChm7hvB6AlxQp7iKJx5itNLM6N3VNauGTE69XM03nrktF+YybIPN16ohCQ2cidQfMUEtshIFLRSUxrU2h+HGnF/Lhc0BzYeZGV9Ggu+z3hsxIgcsdyvB6adFSSiLStMYt0fq7RdGvRBLitrMLaxPp1pOCIQ1Qso5a3HBAB5JWGHSgeilWobNrVICeUScdY2LUwUT9AnvZbPwmbBKR+p+4ilXlIAUGGa67DbHg3zcho2zI9w1CiAo22O6VWNJuW+3k6f5TGjdnITa1124ZhopfDNfNu3RU2sRzAQoPVT4bMdeH/1nM2CWQdukfc0fiP5Ux47Z30f1wWWkrg8Iv2q/KzlMlPe53vZ7/t9SKAuO7DOS5zKJGWi95IXWyQx1kslyFhmwfRXjm4bTImdQ2qiklOdML+AkNslT1zprcSd7g5yXds1yVM7ZycRQagcCA4FSwT61+PBA3uQGuWuCLaqytXZwmDPYj6ZtPmG99l7lV5sRV4=
