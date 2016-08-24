@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'unicards',
+    modulePrefix: 'unitflash',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
