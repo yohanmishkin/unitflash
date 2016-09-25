@@ -178,12 +178,11 @@
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
   transition: all 0.2s ease-in-out;
-  width: 200px;
+  width: 300px;
 
   .card-image {
     background-color: $card-image-hover-color;
-    height: 310px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 
     img {
       @include border-top-radius($base-border-radius);
