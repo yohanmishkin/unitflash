@@ -1,4 +1,4 @@
-import { test, skip } from 'qunit';
+import { test } from 'qunit';
 import moduleForAcceptance from 'unitflash/tests/helpers/module-for-acceptance';
 
 moduleForAcceptance('Acceptance | practice');
@@ -43,6 +43,19 @@ test('Clicking flips card', function(assert) {
 	});	
 });
 
-skip('Can go to next card', function() {
+test('Can go to next card', function(assert) {
+	visit('/practice/1');
 
+	click('.test-next-card');
+
+	andThen(function() {
+		assert.equal(currentURL(), '/practice/2', 'Went to next card');
+	});
+
+	click('.test-unitflash-card');
+	click('.test-next-card');
+
+	andThen(function() {
+		assert.equal(find('.test-unitflash-card-image').attr('src'), '/assets/images/3f.jpg', 'Showing the front image');
+	});
 });
