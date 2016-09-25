@@ -1,10 +1,16 @@
 <div class="practice-nav">
 	<h3>Practice</h3>
-	{{link-to 'Home' 'index' class='test-nav-home'}}
+	<div>{{link-to 'Home' 'index' class='test-nav-home'}}</div>
+	<div>{{link-to 'Random' 'practice' randomId class='test-random-card'}}</div>
 </div>
 
 <div class="cards">
 		{{unitflash-card cardNumber=model front=true}}
 </div>
 
-{{#link-to 'practice' nextId class='test-next-card'}}Next{{/link-to}}
+<div class="travel-links">
+		{{#unless isFirstCard}}
+			{{#link-to 'practice' previousId class='test-previous-card' disabled=isFirstCard}}Previous{{/link-to}}
+		{{/unless}}
+		{{#link-to 'practice' nextId class='test-next-card'}}Next{{/link-to}}
+</div>

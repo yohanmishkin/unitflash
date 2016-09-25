@@ -1,4 +1,4 @@
-import { test } from 'qunit';
+import { test, skip } from 'qunit';
 import moduleForAcceptance from 'unitflash/tests/helpers/module-for-acceptance';
 
 moduleForAcceptance('Acceptance | practice');
@@ -58,4 +58,29 @@ test('Can go to next card', function(assert) {
 	andThen(function() {
 		assert.equal(find('.test-unitflash-card-image').attr('src'), '/assets/images/3f.jpg', 'Showing the front image');
 	});
+});
+
+test('Can go to random card', function(assert) {
+	visit('/practice/1');
+
+	click('.test-random-card');
+
+	andThen(function() {
+		assert.notEqual(currentURL(), '/practice/1', 'Moved to a different card');
+	});
+});
+
+test('Can go to previous card', function(assert) {
+	visit('/practice/2');
+
+	click('.test-previous-card');
+
+	andThen(function() {
+		assert.equal(currentURL(), '/practice/1', 'Moved back a card');
+		assert.equal(find('.test-previous-card').length, 0, 'Previous link is gone now');
+	});
+});
+
+skip('Add keyboard shortcuts', function() {
+
 });
