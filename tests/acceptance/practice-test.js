@@ -9,12 +9,12 @@ test('Can navigate to /practice', function(assert) {
   click('.test-nav-practice');
 
   andThen(function() {
-    assert.equal(currentURL(), '/practice');
+    assert.equal(currentURL(), '/practice/1');
   });
 });
 
 test('Can navigate back to home page from /practice', function(assert) {
-	visit('/practice');
+	visit('/practice/1');
 
 	click('.test-nav-home');
 
@@ -23,12 +23,26 @@ test('Can navigate back to home page from /practice', function(assert) {
   });
 });
 
-skip('/practice shows random card', function(assert) {
-	// generate first random card
-
-	visit('/practice');
+test('Clicking flips card', function(assert) {
+	visit('/practice/1');
 
 	andThen(function() {
-		assert.equal(find('.test-card-practice').text(), 'PRACTICE');
+		assert.equal(find('.test-unitflash-card-image').attr('src'), '/assets/images/1f.jpg', 'Showing the front image');
 	});
+
+	click('.test-unitflash-card');
+
+	andThen(function() {
+		assert.equal(find('.test-unitflash-card-image').attr('src'), '/assets/images/1b.jpg', 'Showing the back image');
+	});
+
+	click('.test-unitflash-card');
+
+	andThen(function() {
+		assert.equal(find('.test-unitflash-card-image').attr('src'), '/assets/images/1f.jpg', 'Showing the front image again');
+	});	
+});
+
+skip('Can go to next card', function() {
+
 });
