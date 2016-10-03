@@ -13,7 +13,7 @@ export default Ember.Component.extend({
 	}),
 
 	imageUrl: Ember.computed('cardNumber', 'side', function() {
-		return `/assets/images/${this.get('cardNumber')}${this.get('side')}.jpg`;
+		return `/cards/${this.get('cardNumber')}${this.get('side')}.jpg`;
 	}),
 
 	actions: {
