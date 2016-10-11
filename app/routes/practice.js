@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model(params) {
-		return params.card_id;
+		return this.get('store').findAll('flashcard').then(function(results) {
+			return results.objectAt(params.cardIndex);
+		});
 	}
 });

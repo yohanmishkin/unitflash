@@ -12,10 +12,6 @@ export default Ember.Component.extend({
 		}
 	}),
 
-	imageUrl: Ember.computed('cardNumber', 'side', function() {
-		return `/cards/${this.get('cardNumber')}${this.get('side')}.jpg`;
-	}),
-
 	actions: {
 		flipCard() {
 			this.toggleProperty('front');
