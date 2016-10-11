@@ -1,12 +1,10 @@
 <div class="demo-wrapper">
-  {{x-file-input action="uploadManyFiles" class="custom-class"
-    id="spec-file-input-three" multiple=true alt="Upload cards"}}
+  {{x-file-input action="uploadManyFiles" class="test-upload-files" multiple=true alt="Upload cards"}}
 
   {{#each flashcards as |flashcard|}}
     <p class="file-name">
       {{flashcard.name}}
-      {{flashcard.front}}
-      {{flashcard.back}}
+      {{flashcard.photoData}}
     </p>
   {{/each}}
 </div>
