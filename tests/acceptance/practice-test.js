@@ -27,20 +27,26 @@ test('Clicking flips card', function(assert) {
 	visit('/practice/1');
 
 	andThen(function() {
-		assert.equal(find('.test-unitflash-card-image').attr('src'), '/cards/1f.jpg', 'Showing the front image');
+		assert.equal(find('.test-unitflash-card-image').attr('alt'), '1s s2.jpg', 'Showing the front image');
 	});
 
 	click('.test-unitflash-card');
 
 	andThen(function() {
-		assert.equal(find('.test-unitflash-card-image').attr('src'), '/cards/1b.jpg', 'Showing the back image');
+		assert.equal(find('.test-unitflash-card-image').attr('alt'), '1s s1.jpg', 'Showing the back image');
 	});
 
 	click('.test-unitflash-card');
 
 	andThen(function() {
-		assert.equal(find('.test-unitflash-card-image').attr('src'), '/cards/1f.jpg', 'Showing the front image again');
-	});	
+		assert.equal(find('.test-unitflash-card-image').attr('alt'), '1s s2.jpg', 'Showing the front image again');
+	});
+
+	click('.test-unitflash-card');
+
+	andThen(function() {
+		assert.equal(find('.test-unitflash-card-image').attr('alt'), '1s s1.jpg', 'Showing the back image');
+	});
 });
 
 test('Can go to next card', function(assert) {
@@ -56,19 +62,10 @@ test('Can go to next card', function(assert) {
 	click('.test-next-card');
 
 	andThen(function() {
-		assert.equal(find('.test-unitflash-card-image').attr('src'), '/cards/3f.jpg', 'Showing the front image');
+		assert.equal(find('.test-unitflash-card-image').attr('alt'), '/cards/3f.jpg', 'Showing the front image');
 	});
 });
 
-test('Can go to random card', function(assert) {
-	visit('/practice/1');
-
-	click('.test-random-card');
-
-	andThen(function() {
-		assert.notEqual(currentURL(), '/practice/1', 'Moved to a different card');
-	});
-});
 
 test('Can go to previous card', function(assert) {
 	visit('/practice/2');

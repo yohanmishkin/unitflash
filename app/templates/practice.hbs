@@ -1,11 +1,10 @@
 <div class="practice-nav">
 	<h3>Practice</h3>
 	<div>{{link-to 'Home' 'index' class='test-nav-home'}}</div>
-	<div>{{link-to 'Random' 'practice' randomId class='test-random-card'}}</div>
 </div>
 
 <div class="cards">
-		{{unitflash-card card=model front=true}}
+		{{unitflash-card card=model front=true flipCard=(action "changeCard")}}
 </div>
 
 <div class="travel-links">

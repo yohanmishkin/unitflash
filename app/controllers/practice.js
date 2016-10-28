@@ -13,12 +13,11 @@ export default Ember.Controller.extend({
 		return Number(this.get('model')) - 1;
 	}),
 
-	randomId: Ember.computed('model', function() {
-		let currentId = Number(this.get('model'));
-		let randomNumber = 0;
-		while (randomNumber === 0 || randomNumber === currentId) {
-			randomNumber = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+	actions: {
+		changeCard(nameOfNewCard) {
+			let cards = this.get('store').peekAll('flashcard');
+			let card = cards.filterBy('name', nameOfNewCard).get('firstObject');
+			this.set('model', card);
 		}
-		return randomNumber;
-	})
+	}
 });
