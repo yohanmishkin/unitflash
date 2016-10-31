@@ -1,16 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	isFirstCard: Ember.computed('model', function() {
-		return this.get('model') === '1';
-	}),
+	nextId: 0,
 
-	nextId: Ember.computed('model', function() {
-		return Number(this.get('model')) + 1;
-	}),
+	isFirstCard: Ember.computed.equal('previousId', 0),
+	isLastCard: Ember.computed.equal('nextId', 59),
 
-	previousId: Ember.computed('model', function() {
-		return Number(this.get('model')) - 1;
+	previousId: Ember.computed('nextId', function() {
+		return this.get('nextId') - 2;
 	}),
 
 	actions: {

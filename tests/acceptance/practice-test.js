@@ -62,10 +62,26 @@ test('Can go to next card', function(assert) {
 	click('.test-next-card');
 
 	andThen(function() {
-		assert.equal(find('.test-unitflash-card-image').attr('alt'), '/cards/3f.jpg', 'Showing the front image');
+		assert.equal(find('.test-unitflash-card-image').attr('alt'), 'ab ref s2.jpg', 'Showing the front image');
 	});
 });
 
+test('Can visit complete page page', function(assert) {
+	visit('/practice/58');
+
+	andThen(function() {
+		assert.equal(find('.test-complete-practice').length, 1, 'Complete link is showing');
+	});
+
+	click('.test-complete-practice');
+
+	andThen(function() {
+		assert.equal(find('.test-completed-banner').length, 1, 'Completed page is showing');
+		assert.equal(currentURL(), '/complete', 'Made it to the completed page');
+	});
+
+	click('.test-home-link');
+});
 
 test('Can go to previous card', function(assert) {
 	visit('/practice/2');

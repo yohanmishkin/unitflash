@@ -44,7 +44,6 @@
   $grid-items-background: $base-background-color;
   $grid-item-background: desaturate($action-color, 30%);
   $grid-item-colors:
-    #e74c3c,
     #2ecc71;
   $grid-item-border-size: 9px;
   $grid-item-columns: 6;
@@ -73,6 +72,7 @@
 
     @include media($large-screen) {
       @include grid-item-columns($grid-item-columns);
+      @include shift(3);
     }
 
     @for $i from 1 through length($grid-item-colors) { // assign colors from $grid-item-colors list
@@ -146,6 +146,11 @@
   }
 }
 
+
+.congrats-header {
+  font-size: 3em;
+  margin-top: 20px;
+}
 
 /*********** CARDS ***********/
 .cards {

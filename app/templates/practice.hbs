@@ -11,5 +11,9 @@
 		{{#unless isFirstCard}}
 			{{#link-to 'practice' previousId class='test-previous-card' disabled=isFirstCard}}Previous{{/link-to}}
 		{{/unless}}
-		{{#link-to 'practice' nextId class='test-next-card'}}Next{{/link-to}}
+		{{#if isLastCard}}
+			{{link-to 'Complete' 'complete' class='test-complete-practice complete-link'}}
+		{{else}}
+			{{#link-to 'practice' nextId class='test-next-card'}}Next{{/link-to}}
+		{{/if}}
 </div>
