@@ -47,7 +47,6 @@
     "emberfire": "2.0.4",
     "emberx-file-input": "1.1.0",
     "loader.js": "^4.0.1",
-    "normalize.css": "4.1.1",
-    "phantomjs2": "^2.2.0"
+    "normalize.css": "4.1.1"
   }
 }
