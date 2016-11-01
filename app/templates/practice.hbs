@@ -1,6 +1,5 @@
 <div class="practice-nav">
-	<h3>Practice</h3>
-	<div>{{link-to 'Home' 'index' class='test-nav-home'}}</div>
+	{{link-to 'Unitflash' 'index' class='test-nav-home' tagName='h3'}}
 </div>
 
 <div class="cards">
@@ -8,12 +7,12 @@
 </div>
 
 <div class="travel-links">
-		{{#unless isFirstCard}}
-			{{#link-to 'practice' previousId class='test-previous-card' disabled=isFirstCard}}Previous{{/link-to}}
-		{{/unless}}
-		{{#if isLastCard}}
-			{{link-to 'Complete' 'complete' class='test-complete-practice complete-link'}}
-		{{else}}
-			{{#link-to 'practice' nextId class='test-next-card'}}Next{{/link-to}}
-		{{/if}}
+	{{#unless isFirstCard}}
+		{{#link-to 'practice' previousId class='test-previous-card' disabled=isFirstCard}}Previous{{/link-to}}
+	{{/unless}}
+	{{#if isLastCard}}
+		{{link-to 'Complete' 'complete' class='test-complete-practice complete-link'}}
+	{{else}}
+		{{#link-to 'practice' nextId class='test-next-card'}}Next{{/link-to}}
+	{{/if}}
 </div>
