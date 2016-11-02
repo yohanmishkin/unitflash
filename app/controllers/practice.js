@@ -6,12 +6,6 @@ export default Ember.Controller.extend({
 		data: [{
 			ele: '.step-1',
 			message: 'Click anywhere on the card to flip the card over.'
-		}, {
-			ele: '.step-2',
-			message: 'Click here to go to the next card.'
-		}, {
-			ele: '.step-3',
-			message: 'Click here to return to the beginning at any time.'
 		}]
 	},
 
