@@ -253,6 +253,10 @@ $unitflash-color: #4F8EFF !default;
       width: 100%;
       box-shadow: 0 12px 14px darken($base-background-color, 30%);
     }
+
+    &:hover {
+      @include transition(opacity 1.0s ease-in 0s, width 2.0s ease-in 2s);
+    }
   }
 
   .card-header {
