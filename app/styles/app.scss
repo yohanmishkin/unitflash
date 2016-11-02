@@ -303,3 +303,15 @@ $unitflash-color: #4F8EFF !default;
   margin-top: -50px;
   background-size: 100%;
 }
+
+.default-btn {
+  padding: 0;
+}
+
+.skip-btn {
+  display: none;
+}
+
+.tutorial-component {
+  min-width: 0px;
+}
