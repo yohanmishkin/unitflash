@@ -2,10 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 	tutorialConfig: {
-		mask: false,
 		data: [{
 			ele: '.step-1',
 			message: 'Click anywhere on the card to flip the card over.'
+		}, {
+			ele: '.step-2',
+			pointerDirection: 'down',
+			message: 'Navigate the deck of cards with these buttons.'
 		}]
 	},
 

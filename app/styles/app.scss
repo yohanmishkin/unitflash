@@ -16,17 +16,24 @@
 }
 
 .header {
+  margin-top: 5px;
   .header-logo {
-    max-width: 200px;
+    max-width: 160px;
   }
 
   h1 {
-    font-size: 5em;
-    margin-bottom: 5px;
+    font-size: 4em;
+    @include media($medium-screen) {
+      font-size: 5em;
+      margin-bottom: 5px;
+    }    
   }
 
   p {
-    font-size: 2em;
+    font-size: 1.5em;
+    @include media($large-screen) {
+      font-size: 2em;
+    }
   }
 }
 
@@ -138,8 +145,8 @@ $unitflash-color: #4F8EFF !default;
 }
 
 .practice-nav {
-  margin-top: 20px;
-  margin-bottom: 15px;
+  margin-top: 12px;
+  margin-bottom: 5px;
 
   h3 {
     font-size: 3em;
@@ -156,6 +163,7 @@ $unitflash-color: #4F8EFF !default;
 
 .travel-links {
   font-size: 1.5em;
+  margin-bottom: 15px;
 
   .complete-link {
     background-color: #5fcf80;
@@ -237,7 +245,7 @@ $unitflash-color: #4F8EFF !default;
   cursor: pointer;
   flex-basis: 15em;
   flex-grow: 1;
-  margin: 0 $card-margin $base-spacing $card-margin;
+  margin: 0 $card-margin $card-margin $card-margin;
   position: relative;
   transition: all 0.2s ease-in-out;
   width: 300px;
@@ -312,15 +320,18 @@ $unitflash-color: #4F8EFF !default;
   padding: 0;
 }
 
-.skip-btn {
-  display: none;
-}
-
 .tutorial-component {
   min-width: 0px;
 }
 
-
+.step-1 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -50px;
+  background-size: 100%;
+}
 
 
 .footer {
@@ -349,7 +360,7 @@ $unitflash-color: #4F8EFF !default;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: $base-spacing;
+    /*margin-bottom: $base-spacing;*/
   }
 
   ul {
