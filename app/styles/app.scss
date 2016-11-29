@@ -10,6 +10,10 @@
 @import "bower_components/neat/app/assets/stylesheets/_neat";
 @import "base/_base";
 
+html {
+    height: calc(100% + 72px);
+}
+
 .container {
   @include outer-container;
   text-align: center;
@@ -18,7 +22,7 @@
 .header {
   margin-top: 5px;
   .header-logo {
-    max-width: 160px;
+    max-width: 150px;
   }
 
   h1 {
@@ -31,6 +35,7 @@
 
   p {
     font-size: 1.5em;
+    margin-bottom: 3px;
     @include media($large-screen) {
       font-size: 2em;
     }
@@ -57,7 +62,7 @@ $unitflash-color: #4F8EFF !default;
   $grid-item-columns: 6;
   $grid-item-big-columns: 8;
   $grid-item-color: white;
-  $grid-item-height: 14em;
+  $grid-item-height: 12em;
 
   @include clearfix;
 
@@ -214,6 +219,103 @@ $unitflash-color: #4F8EFF !default;
   font-size: 2em;
 }
 
+.loading-spinner {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 45%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  background-size: 100%;
+}
+
+.default-btn {
+  padding: 0;
+}
+
+.tutorial-component {
+  min-width: 0px;
+}
+
+.step-1 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -50px;
+  background-size: 100%;
+}
+
+
+.footer {
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $medium-screen: 40em !default;
+  $large-screen: 53.75em !default;
+  $footer-background: desaturate(darken($action-color, 20%), 30%);
+  $footer-color: white;
+  $footer-link-color: transparentize($footer-color, 0.6);
+  $footer-disclaimer-color: transparentize($footer-color, 0.6);
+
+  padding: ($base-spacing /2) 0px;
+  width: 100%;
+
+  .footer-logo {
+    margin-bottom: 2em;
+    text-align: center;
+
+    img {
+      height: 3em;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*margin-bottom: $base-spacing;*/
+  }
+
+  ul {
+    flex-basis: 15em;
+    flex-shrink: 0;
+    margin-bottom: $base-spacing / 2;
+    padding: 0;
+  }
+
+  li {
+    /*line-height: 1.5em;*/
+    list-style: none;
+    text-align: center;
+  }
+
+  li a {
+    /*color: $footer-link-color;*/
+    text-decoration: none;
+  }
+
+  li h3 {
+    /*color: $footer-color;*/
+    font-size: 1em;
+    /*margin-bottom: 0.4em;*/
+  }
+
+  hr {
+    border: 1px solid transparentize($footer-disclaimer-color, 0.3);
+    margin: 0 auto $base-spacing;
+    width: 12em;
+  }
+
+  p {
+    color: $footer-disclaimer-color;
+    font-size: 0.9em;
+    /*line-height: 1.5em;*/
+    margin: auto;
+    max-width: 35em;
+    text-align: center;
+  }
+}
 
 /*********** CARDS ***********/
 .cards {
@@ -249,6 +351,7 @@ $unitflash-color: #4F8EFF !default;
   position: relative;
   transition: all 0.2s ease-in-out;
   width: 300px;
+  /*height: 450px;*/
 
   .card-image {
     background-color: $card-image-hover-color;
@@ -302,103 +405,5 @@ $unitflash-color: #4F8EFF !default;
     .card-header {
       background-color: $card-background;
     }
-  }
-}
-
-.loading-spinner {
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  top: 45%;
-  left: 50%;
-  margin-left: -50px;
-  margin-top: -50px;
-  background-size: 100%;
-}
-
-.default-btn {
-  padding: 0;
-}
-
-.tutorial-component {
-  min-width: 0px;
-}
-
-.step-1 {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  margin-left: -30px;
-  margin-top: -50px;
-  background-size: 100%;
-}
-
-
-.footer {
-  $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $medium-screen: 40em !default;
-  $large-screen: 53.75em !default;
-  $footer-background: desaturate(darken($action-color, 20%), 30%);
-  $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
-
-  padding: ($base-spacing * 2) $gutter;
-  width: 100%;
-
-  .footer-logo {
-    margin-bottom: 2em;
-    text-align: center;
-
-    img {
-      height: 3em;
-    }
-  }
-
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /*margin-bottom: $base-spacing;*/
-  }
-
-  ul {
-    flex-basis: 15em;
-    flex-shrink: 0;
-    margin-bottom: $base-spacing * 2;
-    padding: 0;
-  }
-
-  li {
-    line-height: 1.5em;
-    list-style: none;
-    text-align: center;
-  }
-
-  li a {
-    /*color: $footer-link-color;*/
-    text-decoration: none;
-  }
-
-  li h3 {
-    /*color: $footer-color;*/
-    font-size: 1em;
-    margin-bottom: 0.4em;
-  }
-
-  hr {
-    border: 1px solid transparentize($footer-disclaimer-color, 0.3);
-    margin: 0 auto $base-spacing;
-    width: 12em;
-  }
-
-  p {
-    color: $footer-disclaimer-color;
-    font-size: 0.9em;
-    line-height: 1.5em;
-    margin: auto;
-    max-width: 35em;
-    text-align: center;
   }
 }
