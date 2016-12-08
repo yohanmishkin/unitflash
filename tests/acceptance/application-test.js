@@ -16,6 +16,6 @@ test('Home page has navigation', function(assert) {
 	visit('/');
 
 	andThen(function() {
-		assert.equal(find('.test-header-practice').text(), 'BEGIN');
+		assert.equal(find('.test-header-practice').text(), "Let's go!");
 	});
 });

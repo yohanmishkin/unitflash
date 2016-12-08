@@ -25,6 +25,11 @@ $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 
+$action-color: #477DCA !default;
+$unitflash-color: #4F8EFF !default;
+$start-color: desaturate($action-color, 30%);
+$start-green: #2ecc71;
+
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $blue;
