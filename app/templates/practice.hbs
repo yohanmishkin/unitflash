@@ -1,15 +1,12 @@
-<div>
-	{{!ember-tutorial-component config=tutorialConfig}}
-</div>
-<div class="practice-nav">
+<div class="home-nav">
 	{{link-to 'Unitflash' 'index' class='test-nav-home' tagName='h3'}}
 </div>
 
-<div class="cards">
+<div class="deck">
 	{{unitflash-card card=model front=true flipCard=(action "changeCard")}}
 </div>
 
-<div class="travel-links step-2">
+<div class="travel-links">
 	{{#unless isFirstCard}}
 		{{#link-to 'practice' previousId class='test-previous-card' disabled=isFirstCard}}Previous{{/link-to}}
 	{{/unless}}
