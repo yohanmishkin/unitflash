@@ -161,7 +161,8 @@ html {
       $card-image-hover-opacity: 0.85;
 
       img {
-        min-height: 450px;
+        height: 80%;
+        min-height: 380px;
       }
 
       &:focus,
