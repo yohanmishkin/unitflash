@@ -203,7 +203,8 @@ html {
       display: inline-block;
       width: 120px;
       color: #fff;
-      border-radius: 4px;    
+      border-radius: 4px;
+      margin: 1%;
 
       background-color: $unitflash-color;
       border-bottom-color: $unitflash-color;
@@ -220,7 +221,7 @@ html {
       border-right-color: $unitflash-color;
       border-right-style: solid;
       border-right-width: 2px;
-      border-top-color: $unitflash-color;    
+      border-top-color: $unitflash-color;
       border-top-style: solid;
       border-top-width: 2px;
       box-sizing: border-box;
