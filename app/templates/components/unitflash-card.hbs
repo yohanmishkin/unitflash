@@ -1,3 +1,8 @@
-<div class="card test-unitflash-card" {{action 'flipCard'}}>
-  <img src={{card.photoData}} alt="{{card.name}}" class='test-unitflash-card-image'>
+<div class="card {{if isFlipped 'flipped'}} test-unitflash-card" {{action 'flipCard'}}>
+  <div class="front">
+    <img src={{card.front.photoData}} alt="{{card.front.name}}" class="test-card-front">
+  </div>
+  <div class="back">
+    <img src={{card.back.photoData}} alt="{{card.back.name}}" class="test-card-back">
+  </div>
 </div>

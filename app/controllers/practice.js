@@ -1,16 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	tutorialConfig: {
-		data: [{
-			ele: '.step-1',
-			message: 'Click anywhere on the card to flip the card over.'
-		}, {
-			ele: '.step-2',
-			pointerDirection: 'down',
-			message: 'Navigate the deck of cards with these buttons.'
-		}]
-	},
 
 	nextId: 0,
 
@@ -19,13 +9,5 @@ export default Ember.Controller.extend({
 
 	previousId: Ember.computed('nextId', function() {
 		return this.get('nextId') - 2;
-	}),
-
-	actions: {
-		changeCard(nameOfNewCard) {
-			let cards = this.get('store').peekAll('flashcard');
-			let card = cards.filterBy('name', nameOfNewCard).get('firstObject');
-			this.set('model', card);
-		}
-	}
+	})
 });
