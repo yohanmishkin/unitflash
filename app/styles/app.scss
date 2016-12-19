@@ -163,7 +163,7 @@ html {
     perspective: 800px;
     min-height: 450px;
     height: 1em;
-    margin-bottom: 15px;
+    margin-bottom: 6px;
 
     .card {
       $base-border-color: gainsboro !default;
@@ -175,7 +175,7 @@ html {
       height: 100%;
       position: absolute;
       transition: transform 0.75s;
-      transform-style: preserve-3d;
+      @include transform-style(preserve-3d);
 
       img {
         min-height: 450px;
@@ -208,12 +208,12 @@ html {
         backface-visibility: hidden;
       }
       .back {
-        transform: rotateY(180deg);
+        @include transform(rotateY(180deg));
       }
     }
 
     .flipped {
-      transform: rotateY(180deg);
+      @include transform(rotateY(180deg));
     }
   }
 
